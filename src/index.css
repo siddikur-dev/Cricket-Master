@@ -6,3 +6,10 @@
 body {
     font-family: "Space Grotesk", sans-serif;
 }
+
+.bg-image {
+    background-image: url("/bg-shadow.png");
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+}
