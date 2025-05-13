@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const AvailablePlayer = ({ single, count, setCount }) => {
   const { name, country, image, role, battingType, bowlingType, biddingPrice } =
     single;
-
-  // Conditionla Dynamic Function
-
+  // Dynamic Button Class
+  const [select, setSelected] = useState(false);
+  // Dynamic Player Selected
   const handleChosePlayer = () => {
+    // already selected check
+    if (select) {
+      toast.promise(saveSettings(settings), {
+        loading: "Saving...",
+        success: <b>Settings saved!</b>,
+        error: <b>Could not save.</b>,
+      });
+    }
+
+    // balance Check
     if (count < biddingPrice) {
-      toast.warning("Insuficiant Balance");
+      toast.error("Insuficiant Balance");
     } else {
-      toast.success("Succesfully Added");
+      toast.success("Succesfully Player Selected");
       setCount(count - biddingPrice);
+      // Dynamic Button Class
+      setSelected(true);
     }
   };
   return (
@@ -69,9 +81,9 @@ const AvailablePlayer = ({ single, count, setCount }) => {
             </p>
             <button
               onClick={handleChosePlayer}
-              className="bg-yellow-500 text-white py-2 px-4 rounded-lg transition-transform transform hover:scale-105"
+              className={`btn ${select ? "btn-success" : "btn-warning"}`}
             >
-              Choose Player
+              {select ? "Player Selected" : "Select Player"}
             </button>
           </div>
         </div>

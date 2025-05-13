@@ -1,7 +1,14 @@
 import React from "react";
 import bgShadow from "../../assets/bg-shadow.png";
 import bannerMain from "../../assets/banner-main.png";
+import { toast, ToastContainer } from "react-toastify";
 const Header = ({ handleCount5k }) => {
+  const successToastify = () => {
+    handleCount5k();
+
+    toast.success("Successfully Coin Added!");
+  };
+
   return (
     <div className="container mx-auto">
       <div className=" relative">
@@ -34,7 +41,7 @@ const Header = ({ handleCount5k }) => {
 
           <div className=" mt-2">
             <button
-              onClick={handleCount5k}
+              onClick={successToastify}
               className="btn bg-[#E7FE29] gap-2  lg:text-xl rounded-2xl"
             >
               Claim Free Credit

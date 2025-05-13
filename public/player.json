@@ -7,7 +7,7 @@
     "role": "Batsman",
     "battingType": "Right-hand bat",
     "bowlingType": "Right-arm medium",
-    "biddingPrice": 25000
+    "biddingPrice": 15000
   },
   {
     "playerId": 2,
@@ -37,7 +37,7 @@
     "role": "Bowler",
     "battingType": "Right-hand bat",
     "bowlingType": "Right-arm fast",
-    "biddingPrice": 30000
+    "biddingPrice": 1000
   },
   {
     "playerId": 5,
@@ -67,7 +67,7 @@
     "role": "Batsman",
     "battingType": "Left-hand bat",
     "bowlingType": "Right-arm leg-break",
-    "biddingPrice": 20000
+    "biddingPrice": 2000
   },
   {
     "playerId": 8,
